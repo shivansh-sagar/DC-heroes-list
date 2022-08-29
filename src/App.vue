@@ -1,11 +1,16 @@
 <template>
-  <div
-    class="mt-4 text-black d-flex flex-column align-items-center justify-content-center"
-  >
-    
-      <h1 class="h1">DC Heroes</h1>
-       <img  src="https://th.bing.com/th/id/OIP.DL-XesiiZEfcnyn3D4fvVQHaHa?w=156&h=180&c=7&r=0&o=5&pid=1.7" alt=""> 
-    
+  <button class="btn btn-dark DarkModeToggler" @click="darkMode">
+    <i class="fa fa-moon" /> dark
+  </button>
+  <div :[attribute]="classes">
+    <h1 :[attribute]="themeD">DC Heroes</h1>
+    <span class="p-0"
+      ><img
+        src="https://th.bing.com/th/id/OIP.DL-XesiiZEfcnyn3D4fvVQHaHa?w=200&h=200&c=0&r=0&o=0&pid=0"
+        alt=""
+      />
+    </span>
+
     <!-- <h1 v-if="isShowing" v-html="title"></h1>
   
   <h1 v-else-if="isShowing=== null">This is second title</h1>
@@ -23,9 +28,29 @@ import Nav from "./components/Nav.vue";
 export default {
   data() {
     return {
-      // title: "<h1>This is title</h1>",
-      // isShowing: true,
+      themeD: "text-black",
+      attribute: "class",
+      classes: "vh-100 w-100 m-0 d-flex flex-column align-items-center",
     };
+  },
+  methods: {
+    darkMode() {
+      this.classes == "vh-100 w-100 m-0 d-flex flex-column align-items-center"
+        ? ((this.classes =
+            "vh-100 m-0 w-100 bg-dark d-flex flex-column align-items-center"),
+          (this.themeD = "text-white"))
+        : ((this.classes =
+            "vh-100 w-100 m-0 d-flex flex-column align-items-center"),
+          (this.themeD = "text-black"));
+      // if(this.classes=="vh-100 w-100 m-0 d-flex flex-column align-items-center"){
+      //   this.classes="vh-100 m-0 w-100 bg-dark d-flex flex-column align-items-center";
+      //   this.themeD ='text-white';
+      // }
+      // else{
+      //   this.classes="vh-100 w-100 m-0 d-flex flex-column align-items-center";
+      //   this.themeD ='text-black';
+      // }
+    },
   },
   components: {
     Nav,
@@ -34,10 +59,17 @@ export default {
 </script>
 
 <style>
-.h1 {
-  color: rgb(34, 26, 26);
-  font-size: 50px;
+.DarkModeToggler {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
-
+h1 {
+  margin-top: 30px;
+  font-size: 50px;
+}
+img {
+  border-radius: 50%;
+}
 </style>

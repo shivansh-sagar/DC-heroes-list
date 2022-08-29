@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-<div class=" card w-75">
+<div class="card w-75">
   <ul class=" card-body">
     <span class=" card mb-3 "><input class=" card-body mb-3 input-group" v-model="newHero" placeholder="Type DC Hero Name Here"><button  type="submit" class="btn btn-primary"  @click="add(newHero)" >add</button></span>
     
@@ -41,7 +41,7 @@ export default {
         },
         add() {
           if(this.newHero!=''){
-            this.a.push({name: this.newHero});
+            this.a.unshift({name: this.newHero});
             this.newHero = '';
            console.log(this.newHero);
         }
