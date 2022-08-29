@@ -66,7 +66,7 @@ export default {
 }
 
 h1 {
-  margin-top: 30px;
+  margin-top: 60px;
   font-size: 50px;
 }
 img {
