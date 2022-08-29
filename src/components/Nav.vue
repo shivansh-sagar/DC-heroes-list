@@ -2,7 +2,7 @@
 <template>
 <div class=" card w-75">
   <ul class=" card-body">
-    
+    <span class=" card mb-3 "><input class=" card-body mb-3 input-group" v-model="newHero" placeholder="Type DC Hero Name Here"><button  type="submit" class="btn btn-primary"  @click="add(newHero)" >add</button></span>
     
     <li
       class="card card-body  d-flex flex-row align-items-center justify-content-between mb-1"
@@ -13,7 +13,7 @@
     <span @click="del(hero,value)"><i  class='fa fa-x'></i></span>  
     </li>
   </ul>
-  <span class=" card p-5"><input class=" card-body  my- input-group" v-model="newHero" placeholder="Type DC Hero Name Here"><button  type="submit" class="btn btn-primary"  @click="add(newHero)" >add</button></span>
+  
 </div>
 </template>
 
@@ -51,4 +51,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+  input{
+    max-height: 20px;
+    border:none;
+    outline: none;
+  }
+</style>
